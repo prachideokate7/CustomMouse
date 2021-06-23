@@ -1,0 +1,102 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html {
+    cursor: none;
+}
+
+#circularcursor {
+    background-color: transparent;
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    animation: colorchange 5s linear infinite;
+    -webkit-animation: colorchange 5s linear infinite;
+
+}
+
+span {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    transform: scale(0.01);
+    -webkit-transform: scale(0.01);
+    -moz-transform: scale(0.01);
+    -ms-transform: scale(0.01);
+    -o-transform: scale(0.01);
+    box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow, 0 0 40px yellow, 0 0 50px yellow;
+    transition: 4s;
+    -webkit-transition: 4s;
+    -moz-transition: 4s;
+    -ms-transition: 4s;
+    -o-transition: 4s;
+    border-radius: 100%;
+}
+
+span:hover::before {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition: 0s;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -ms-transition: 0s;
+    -o-transition: 0s;
+    border-radius: 100%;
+}
+
+@keyframes colorchange {
+    0% {
+        filter: hue-rotate(0deg);
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+        -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+#text {
+    position: absolute;
+    top: 400em;
+    color: white;
+    z-index: 58599809809;
+    left: 50px;
+    font-size: 100px;
+}
